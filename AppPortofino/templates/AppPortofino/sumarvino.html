@@ -1,0 +1,20 @@
+{% extends "AppPortofino/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+<form action="{% url 'sumar_vino' %}" method="post">
+    {% csrf_token %}
+    {{ formulario.as_p }}
+    {{ formulario.errors }}
+    <input type="submit" value="Enviar" />
+    </form>
+
+
+{% endblock %}
+
+
+
+
+   
