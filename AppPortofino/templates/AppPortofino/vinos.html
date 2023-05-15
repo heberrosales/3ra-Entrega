@@ -5,11 +5,22 @@
 
 {% block contenidoQueCambia %}
 <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
-<h1>Este es el título del Inicio que cambio</h1>
 
-    <p>Se ha heredado todo desde la plantilla padre</p>
+<section>
+    <div>
+        <h1>Este es el título del Inicio que cambio</h1>
+    
+            <p>Se ha heredado todo desde la plantilla padre</p>
+    
+        <ul>
+        {% for wine in vinos %}
+            <li>{{ wine.nombre }}, {{ wine.bodega }}, {{ wine.año }} </li>
+        {% endfor %}
+        </ul>
+    </div>
+</section>
 
-<h3>En el hijo, inicio.html, casí no hay nada</h3>
+        
 
 
 {% endblock %}

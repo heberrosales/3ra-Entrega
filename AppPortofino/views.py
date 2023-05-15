@@ -19,8 +19,19 @@ def comentarios(request):
 def frutosSecos(request):
     return render(request, "AppPortofino/frutossecos.html")
 
-def vinos(request):
-    return render(request, "AppPortofino/vinos.html")
+#def vinos(request):
+ #   return render(request, "AppPortofino/vinos.html")
+
+def listar_vinos(request):
+    contexto = {
+        "vinos": Vinos.objects.all(),
+    }
+    http_response = render(
+        request=request,
+        template_name='AppPortofino/vinos.html',
+        context=contexto,
+    )
+    return http_response
 
 def sumar_vino(request):
    if request.method == "POST":
