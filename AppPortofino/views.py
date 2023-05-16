@@ -33,7 +33,7 @@ def listar_vinos(request):
     )
     return http_response
 
-def sumar_vino(request):
+def sumar_vino(request): #formulario usando Django
    if request.method == "POST":
        formulario = VinoFormulario(request.POST)
 
